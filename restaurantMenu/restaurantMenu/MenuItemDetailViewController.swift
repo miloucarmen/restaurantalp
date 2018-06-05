@@ -37,10 +37,11 @@ class MenuItemDetailViewController: UIViewController {
             }
         }
     }
+    
     func setupDelegate() {
         if let navController = tabBarController?.viewControllers?.last as? UINavigationController,
             let orderTableViewController = navController.viewControllers.first as? OrderTableViewController {
-            delegate = orderTableViewController as! AddToOrderDelegate
+            delegate = orderTableViewController as? AddToOrderDelegate
         }
     }
     

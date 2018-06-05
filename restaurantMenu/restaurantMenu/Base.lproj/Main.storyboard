@@ -6,6 +6,8 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -36,7 +38,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="kHV-Gj-9QS" kind="show" identifier="MenuSerge" id="rWk-8j-zny"/>
+                                    <segue destination="kHV-Gj-9QS" kind="show" identifier="MenuSegue" id="rWk-8j-zny"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -82,6 +84,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="9BG-d0-roN">
+                                            <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </imageView>
                                     </subviews>
@@ -109,11 +112,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="gray" translatesAutoresizingMaskIntoConstraints="NO" id="ZEJ-Wf-Uk9">
-                                <rect key="frame" x="16" y="124" width="343" height="200"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gray" translatesAutoresizingMaskIntoConstraints="NO" id="ZEJ-Wf-Uk9">
+                                <rect key="frame" x="16" y="124" width="343" height="167"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Price Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xas-JD-bjO">
-                                <rect key="frame" x="320" y="332" width="39" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xas-JD-bjO">
+                                <rect key="frame" x="279" y="299" width="80" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="80" id="IWd-SU-FTF"/>
                                 </constraints>
@@ -121,38 +124,47 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nHR-YR-MAE">
-                                <rect key="frame" x="16" y="364" width="343" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nHR-YR-MAE">
+                                <rect key="frame" x="16" y="331" width="343" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9GY-Fb-AdB">
-                                <rect key="frame" x="16" y="588" width="343" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="RuT-Gk-xa2">
+                                <rect key="frame" x="16" y="299" width="255" height="24"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9GY-Fb-AdB">
+                                <rect key="frame" x="16" y="580" width="343" height="30"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Add To Order">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="orderButtonTapped:" destination="h1l-2Z-EdX" eventType="touchUpInside" id="xgc-ip-3LA"/>
+                                    <action selector="orderButtonTapped:" destination="h1l-2Z-EdX" eventType="touchUpInside" id="ZbZ-pT-Eh5"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Title Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="RuT-Gk-xa2">
-                                <rect key="frame" x="16" y="332" width="301" height="24"/>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="xas-JD-bjO" firstAttribute="leading" secondItem="RuT-Gk-xa2" secondAttribute="trailing" constant="8" id="2yw-Ue-gSD"/>
+                            <constraint firstItem="ZEJ-Wf-Uk9" firstAttribute="trailing" secondItem="nHR-YR-MAE" secondAttribute="trailing" id="4Vo-Zc-kX1"/>
+                            <constraint firstItem="ZEJ-Wf-Uk9" firstAttribute="leading" secondItem="nHR-YR-MAE" secondAttribute="leading" id="4xA-22-okW"/>
+                            <constraint firstItem="ZEJ-Wf-Uk9" firstAttribute="height" secondItem="gM7-gl-TSi" secondAttribute="height" multiplier="0.25" id="AUX-0f-lHi"/>
+                            <constraint firstItem="ZEJ-Wf-Uk9" firstAttribute="leading" secondItem="gM7-gl-TSi" secondAttribute="leadingMargin" id="CHf-Yx-ePb"/>
                             <constraint firstItem="ZEJ-Wf-Uk9" firstAttribute="top" secondItem="89d-XI-lJT" secondAttribute="top" constant="8" id="Hq6-lQ-cHy"/>
                             <constraint firstItem="xas-JD-bjO" firstAttribute="leading" secondItem="RuT-Gk-xa2" secondAttribute="trailing" constant="8" id="JOj-8L-mWM"/>
+                            <constraint firstItem="ZEJ-Wf-Uk9" firstAttribute="trailing" secondItem="gM7-gl-TSi" secondAttribute="trailingMargin" id="Psi-eQ-Nat"/>
                             <constraint firstItem="nHR-YR-MAE" firstAttribute="top" secondItem="RuT-Gk-xa2" secondAttribute="bottom" constant="8" id="Ro2-WW-Fn9"/>
                             <constraint firstItem="RuT-Gk-xa2" firstAttribute="top" secondItem="ZEJ-Wf-Uk9" secondAttribute="bottom" constant="8" id="S8F-Mk-utN"/>
+                            <constraint firstItem="ZEJ-Wf-Uk9" firstAttribute="leading" secondItem="9GY-Fb-AdB" secondAttribute="leading" id="Vnu-SQ-q0I"/>
                             <constraint firstItem="xas-JD-bjO" firstAttribute="top" secondItem="ZEJ-Wf-Uk9" secondAttribute="bottom" constant="8" id="f6J-0g-tVX"/>
+                            <constraint firstItem="ZEJ-Wf-Uk9" firstAttribute="trailing" secondItem="xas-JD-bjO" secondAttribute="trailing" id="lJF-DB-zG6"/>
+                            <constraint firstItem="ZEJ-Wf-Uk9" firstAttribute="trailing" secondItem="9GY-Fb-AdB" secondAttribute="trailing" id="nSs-dL-fwQ"/>
+                            <constraint firstItem="ZEJ-Wf-Uk9" firstAttribute="leading" secondItem="RuT-Gk-xa2" secondAttribute="leading" id="sA3-mj-PFu"/>
+                            <constraint firstItem="9GY-Fb-AdB" firstAttribute="bottom" secondItem="89d-XI-lJT" secondAttribute="bottom" constant="-8" id="tFl-1d-fxD"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="89d-XI-lJT"/>
                     </view>
@@ -185,7 +197,7 @@
             </objects>
             <point key="canvasLocation" x="560.79999999999995" y="24.7376311844078"/>
         </scene>
-        <!--Root View Controller-->
+        <!--Your Order-->
         <scene sceneID="12L-4S-DgQ">
             <objects>
                 <tableViewController id="zvH-WU-b6f" customClass="OrderTableViewController" customModule="restaurantMenu" customModuleProvider="target" sceneMemberID="viewController">
@@ -231,7 +243,7 @@
                             <outlet property="delegate" destination="zvH-WU-b6f" id="gvv-HI-7ai"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="DOb-Tg-dgu">
+                    <navigationItem key="navigationItem" title="Your Order" id="DOb-Tg-dgu">
                         <barButtonItem key="rightBarButtonItem" title="Submit" id="oQ3-Pd-foT">
                             <connections>
                                 <action selector="submitTapped:" destination="zvH-WU-b6f" id="WSO-dx-UkH"/>

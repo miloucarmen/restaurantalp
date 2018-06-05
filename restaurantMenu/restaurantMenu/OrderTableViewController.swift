@@ -5,7 +5,7 @@ protocol AddToOrderDelegate {
     func added(menuItem: MenuItem)
 }
 
-class OrderTableViewController: UITableViewController {
+class OrderTableViewController: UITableViewController, AddToOrderDelegate {
     
     var menuItems = [MenuItem]()
     var orderMinutes: Int?
